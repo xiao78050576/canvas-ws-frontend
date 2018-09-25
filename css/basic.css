@@ -1,0 +1,38 @@
+/*css reset*/
+html{font-family:"Microsoft YaHei",sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+html,body,h1,h2,h3,h4,h5,h6,p,blockquote,dl,dt,dd,ol,ul,li,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embedmenu{margin:0;padding:0;border:0;}
+th{font-weight: normal}
+li{list-style:none}
+em,i{font-style: normal}
+a{background-color:transparent;text-decoration:none}
+a:active,a:hover{outline:0}
+dfn{font-style:italic}
+img{border:0;width:100%;display: block;overflow: hidden;}
+button,input,select,textarea{color:inherit;font:inherit;margin:0;outline:none;line-height:normal}
+button{overflow:visible}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+/*common css*/
+.fl{float: left;}
+.fr{float:right;}
+.fixed {position: fixed;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.rel{position: relative;}
+.abs{position: absolute;}
+.inlineDis{display: inline-block;}
+.blockDis{display: block;}
+.f12 {font-size:12px;}
+.f13 {font-size: 13px;}
+.f14 {font-size: 14px;}
+.f15 {font-size: 15px;}
+.f16 {font-size: 16px;}
+.f18 {font-size: 18px;}
+.f20 {font-size: 20px;}
+.f23 {font-size: 23px;}
+.f24 {font-size: 24px;}
+.f27 {font-size: 27px;}
+.f28 {font-size: 28px;}
+.f30 {font-size: 30px;}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #login{
+            background: #50b9ff;
+        }
+        #loginFooter{
+            text-align: center;
+            font-size: 14px;
+            color:#999999;
+            line-height: 68px;
+            background: #fafafb;
+        }
+        #login .loginCon{
+            top:50%;
+            right:10%;
+            transform: translateY(-50%);
+            background:#eef8ff;
+            border-radius:6px;
+            box-shadow:0 5px 10px #44acf2,0 -5px 10px #44acf2,5px 0 10px #44acf2,-5px 0 10px #44acf2;
+        }
+        #login .loginCon h2{
+            font-size: 20px;
+            text-align: center;
+            color:#555555;
+            line-height: 75px;
+        }
+        #login .loginCon div{
+            margin:0 30px;
+            border:1px solid #e4e4e4;
+            background: #fff;
+            margin-bottom: 15px;
+        }
+        #login .loginCon input{
+            display: inline-block;
+            width:259px;
+            height:40px;
+            border:none;
+            vertical-align: middle;
+        }
+        #login .loginCon span{
+            display: inline-block;
+            width:38px;
+            height:38px;
+            background: url(img/loginPerson.png) no-repeat left;
+            background-size: contain;
+            vertical-align: bottom;
+        }
+        #login .loginCon em{
+            display: inline-block;
+            width:38px;
+            height:38px;
+            background: url(img/loginClock.png) no-repeat left;
+            background-size: contain;
+            vertical-align: bottom;
+        }
+        #login .loginCon .loginBtn{
+            border:none;
+            background: #64d460;
+            border-radius:4px;
+            color:#fff;
+            text-align: center;
+            height:50px;
+            line-height: 50px;
+            font-size: 18px;
+        }
+        #login .loginCon .registerBtn{
+            border:none;
+            background: #f5f5f5;
+            border-radius:4px;
+            color:#999999;
+            text-align: center;
+            height:50px;
+            line-height: 50px;
+            font-size: 18px;
+        }
+        #login .loginCon p{
+            color:#b3b3b3;
+            font-size: 16px;
+            text-align: right;
+            padding-right:30px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<!--头部-->
+<div id="header" class="rel">
+    <div class="logo abs">
+        <img src="img/qdlogo.png" alt="">
+    </div>
+    <div class="headContent">
+        <ul class="clearfix">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="prodList.html">产品中心</a></li>
+            <li><a href="helpCenter.html">帮助中心</a></li>
+            <li><a href="">关于我们</a></li>
+        </ul>
+    </div>
+    <div class="headRight abs clearfix">
+        <ul class="languageChange clearfix fl">
+            <li>繁体站</li>
+            <li>|</li>
+            <li>英文站</li>
+        </ul>
+        <ul class="btns clearfix fl">
+            <li class="searchBtn rel">
+                <img src="img/search.png" alt="">
+                <input class="searchLine abs">
+                <div class="abs block"></div>
+            </li>
+            <li>
+                <img src="img/personal.png" alt="">
+            </li>
+            <li class="rel">
+                <a href="buyCar.html">
+                    <img src="img/buycar.png" alt="">
+                    <div class="prodsNum abs">2</div>
+                </a>
+
+            </li>
+        </ul>
+    </div>
+    <!--产品中心产品-->
+    <div class="combo-box">
+        <div class="content">
+            <dl class="list list-1">
+                <dt>主题玩具</dt>
+                <dd><a href="" title="清洁系列">奇艺村</a></dd>
+                <dd><a href="" title="比菲德修复系列">治心系列</a></dd>
+                <dd><a href="" title="雪络玛意德美白系列">亲亲</a></dd>
+                <dd><a href="" title="库库马伦抗皱系列">治心系列</a></dd>
+                <dd><a href="" title="啊媞绰克紧致系列">边位家族</a></dd>
+                <dd><a href="" title="帕莎莉草本系列">治心系列</a></dd>
+                <dd><a href="" title="护肤彩妆系列">亲亲</a></dd>
+                <dd><a href="" title="啊莎媞咔镇定系列">边位家族</a></dd>
+            </dl>
+            <dl class="list list-2">
+                <dt>文化书刊</dt>
+                <dd><a href="" title="清洁/卸妆/去角质">奇艺村</a></dd>
+                <dd><a href="" title="眼唇护理">亲亲</a></dd>
+                <dd><a href="" title="安瓶/精华">治心系列</a></dd>
+                <dd><a href="" title="水/乳/霜">边位家族</a></dd>
+                <dd><a href="" title="隔离防护">亲亲</a></dd>
+                <dd><a href="" title="面膜">边位家族</a></dd>
+            </dl>
+            <dl class="list list-3">
+                <dt>品牌服装</dt>
+                <dd><a href="" title="敏感肌|舒缓受损">治心系列</a></dd>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+            <dl class="list list-4">
+                <dt>农产品</dt>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+            <dl class="list list-5">
+                <dt>法律援助</dt>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+        </div>
+    </div>
+    <!--登录展示-->
+    <ul class="loginModule abs">
+        <li><a href="login.html">账户登录</a></li>
+        <li><a href="">注册账户</a></li>
+    </ul>
+</div>
+<!--登陆-->
+<div id="login" class="rel">
+    <img src="img/loginBg.png" alt="">
+    <div class="loginCon abs">
+        <h2>账户登录</h2>
+        <div>
+            <span></span><input type="text" placeholder="请输入账户">
+        </div>
+        <div>
+            <em></em><input type="text" placeholder="请输入密码">
+        </div>
+        <div class="loginBtn">登陆</div>
+        <div class="registerBtn">立刻注册</div>
+        <p class="forgetPW">忘记密码?</p>
+    </div>
+</div>
+<!--底部-->
+<div id="loginFooter">
+        ©2017 xky Telecom Equipment Co., Ltd. All rights reserved. 备案号:451345454545
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

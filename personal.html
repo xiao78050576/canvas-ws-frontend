@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?2.0">
+    <style>
+        #personal{
+            width:1260px;
+            margin: 20px auto;
+        }
+        #personal .personalTitle{
+            width:20%;
+            border-top:2px solid #64d460;
+            height:700px;
+            background: #fff;
+        }
+        #personal .personalTitle li{
+            heigth:48px;
+            line-height: 48px;
+            text-align: center;
+            font-size: 16px;
+            color:#999999;
+        }
+        #personal .personalTitle li.active{
+            box-sizing: border-box;
+            border-left:3px solid #64d460;
+            position: relative;
+            background: #f9f9f9;
+            color:#64d460;
+        }
+        #personal .personalTitle li.active:before{
+            content:'';
+            position: absolute;
+            width:0;
+            height:0;
+            left:0;
+            top:50%;
+            transform: translateY(-50%);
+            border-top:6px solid transparent;
+            border-right:6px solid transparent;
+            border-left:6px solid #64d460;
+            border-bottom:6px solid transparent;
+        }
+        #personal .personalTitle li.title{
+            height:60px;
+            line-height: 60px;
+            font-size: 18px;
+            color:#555555;
+        }
+        #personal .personalTitle li span{
+            display: inline-block;
+            width:26px;
+            height:26px;
+            vertical-align: middle;
+            margin-left:-25px;
+        }
+        #personal .personalTitle li em{
+            display: inline-block;
+            vertical-align: middle;
+            margin-left:15px;
+        }
+        #personal .personalTitle li .title_icon1{
+            background: url("img/personalicon1.png")no-repeat left;
+            background-size: contain;
+
+        }
+        #personal .personalTitle li .title_icon2{
+            background: url("img/personalicon2.png")no-repeat left;
+            background-size: contain;
+        }
+        /*个人信息*/
+        #personal .rightCon{
+            width:78%;
+            min-height: 700px;
+            box-sizing:border-box;
+            padding:25px;
+            background: #fff;
+        }
+        #personal .rightCon h2{
+            font-weight: normal;
+            height: 50px;
+            text-align: left;
+            font-size: 18px;
+            border-bottom:1px solid #f3f3f3;
+        }
+        #personal .userMsg{
+            display: none;
+        }
+        #personal .userMsg dt{
+            float: left;
+            width:80px;
+            font-size: 16px;
+            clear: both;
+            text-align: right;
+        }
+        #personal .userMsg dt:first-child{
+            line-height: 200px;
+        }
+        #personal .userMsg .logo{
+            line-height: 200px;
+        }
+        #personal .userMsg .logo span{
+            display: inline-block;
+            vertical-align: middle;
+            width: 160px;
+            height:160px;
+            overflow: hidden;
+            border:1px solid #d2d2d2;
+            cursor:pointer;
+        }
+        #personal .userMsg .logo .changeLogo{
+            width:100%;
+            line-height: 38px;
+            bottom:0;
+            left:0;
+            color:#fff;
+            background: rgba(0,0,0,.6);
+            text-align: center;
+        }
+        #personal .userMsg dt:nth-child(n+2){
+            line-height: 70px;
+            height:70px;
+        }
+        #personal .userMsg dd{
+            float: left;
+            line-height: 70px;
+            margin-left:24px;
+        }
+        #personal .userMsg .nickName{
+            width:410px;
+            border:1px solid #eeeeee;
+            height:42px;
+        }
+        #personal .userMsg .gender span,#personal .userMsg .gender em{
+            display: inline-block;
+            width:18px;
+            height:18px;
+            background: url("img/nocheck.png");
+            background-size: contain;
+            vertical-align: middle;
+            margin-right:10px;
+        }
+        #personal .userMsg .gender em{
+            margin-left:50px;
+        }
+        #personal .userMsg .dataSelect select{
+            width:80px;
+            height:42px;
+            text-indent: 10px;
+            border:1px solid #eeeeee;
+            border-radius:8px;
+        }
+        #personal .userMsg .cityPicker select{
+            display: inline-block;
+            vertical-align: middle;
+            height:42px;
+            border:1px solid #f1f1f1;
+            border-radius:8px;
+            text-indent: 10px;
+            min-width:150px;
+        }
+        #personal .userMsg .saveBtn{
+            width:140px;
+            line-height: 42px;
+            text-align: center;
+            border-radius:8px;
+            color:#fff;
+            background: #64d460;
+        }
+        /*地址管理*/
+        #personal .addressManage{
+            font-size: 16px;
+            display: none;
+        }
+        #personal .addressManage dl{
+            box-size:border-box;
+            padding:20px 25px;
+        }
+        #personal .addressManage dt{
+            height:60px;
+            line-height: 60px;
+            float: left;
+            clear: both;
+            text-align: right;
+            width:100px;
+        }
+        #personal .addressManage dd{
+            float: left;
+            height:60px;
+            line-height: 60px;
+        }
+        #personal .addressManage input{
+            display: inline-block;
+            vertical-align: middle;
+            height:40px;
+            border:1px solid #f1f1f1;
+            margin-left:16px;
+            border-radius:4px;
+            text-indent: 16px;
+            min-width:200px;
+        }
+        #personal .addressManage select{
+            display: inline-block;
+            vertical-align: middle;
+            height:40px;
+            border:1px solid #f1f1f1;
+            margin-left:6px;
+            border-radius:4px;
+            text-indent: 10px;
+            min-width:150px;
+        }
+        #personal .addressManage .cityPicker{
+            margin-left:10px;
+        }
+        #personal .addressManage .tel,#personal .addressManage .email{
+            width:330px;
+        }
+        #personal .addressManage .addressDetail{
+            width:555px;
+        }
+        #personal .addressManage .setDefault{
+            margin-left:15px;
+        }
+        #personal .addressManage .setDefault i{
+            display: inline-block;
+            width:20px;
+            height:20px;
+            background: url("img/nocheck.png")no-repeat left;
+            background-size: contain;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+        #personal .addressManage .btns{
+            margin-left:15px;
+        }
+        #personal .addressManage .btns span{
+            display: inline-block;
+            width:140px;
+            height:46px;
+            line-height: 46px;
+            background:#64d460;
+            border-radius:4px;
+            color:#fff;
+            text-align: center;
+        }
+        #personal .addressManage .btns em{
+            display: inline-block;
+            width:140px;
+            height:46px;
+            line-height: 46px;
+            background:#f1f1f1;
+            border-radius:4px;
+            color:#777777;
+            text-align: center;
+            margin: 0 16px;
+        }
+        #personal .addressContent{
+
+        }
+        #personal  .addressContent thead{
+            height:50px;
+            line-height: 50px;
+            color:#777777;
+            font-size:16px;
+            border:1px solid #e8e8e8;
+            background: #f9f9f9;
+            text-align: center;
+        }
+        #personal .addressContent .line{
+            height:84px;
+            line-height: 84px;
+            border-left:1px solid #e8e8e8;
+            border-right:1px solid #e8e8e8;
+            border-bottom:1px solid #e8e8e8;
+        }
+        #personal .addressContent td{
+            text-align: center;
+            line-height: 20px;
+        }
+        #personal .addressContent .line td li{
+            float: left;
+            padding: 0 7px;
+            color:#64d460;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        #personal .addressContent .line td li:nth-child(2){
+            border-left:1px solid #64d460;
+            border-right:1px solid #64d460;
+        }
+        /*我的订单*/
+        #personal .myOrder{
+            font-size: 18px;
+            /*display: none;*/
+        }
+        #personal .myOrder .orderTag{
+            margin: 20px 0;
+        }
+        #personal .myOrder .orderTag li{
+            float: left;
+            padding: 0 22px;
+            box-sizing:border-box;
+            cursor:pointer;
+        }
+        #personal .myOrder .orderTag li.active{
+            color:#64d460;
+
+        }
+        #personal .myOrder .orderTag li:nth-child(n+2){
+            border-left:1px solid #f3f3f3;
+        }
+        #personal .myOrder .orderTitle{
+            text-align: center;
+            height:50px;
+            line-height: 50px;
+            background: #f9fff9;
+            border:1px solid #e8e8e8;
+            color:#777777;
+            border-radius:8px;
+        }
+        #personal .myOrder .orderList>li{
+            margin-top:20px;
+            border:1px solid #f3f3f3;
+            width:100%;
+        }
+        #personal .orderList>li .orderMsgTop{
+            background: #f9f9f9;
+            border-bottom:1px solid #f3f3f3;
+            height:50px;
+            line-height: 50px;
+            text-indent: 25px;
+            font-size: 16px;
+            color:#999999;
+            box-sizing: border-box;
+        }
+        #personal .orderList>li .orderMsgTop span{
+            margin-right:25px;
+        }
+        #personal .myOrder .orderMsgCon{
+            width:100%;
+        }
+        #personal .myOrder .orderProds{
+            width:70%;
+            border-right:1px solid #f3f3f3;
+        }
+        #personal .myOrder .orderProds li{
+            height: 160px;
+        }
+        #personal .myOrder .orderProds li:nth-child(n+2){
+            border-top:1px solid #f3f3f3;
+        }
+        #personal .myOrder .proImg{
+            width:18%;
+            margin-left:4%;
+            transform: translateY(20%);
+        }
+        #personal .myOrder .proDescribe{
+            width:40%;
+            margin-left:3%;
+            transform: translateY(110%);
+        }
+
+        #personal .myOrder .proDescribe p{
+            color:#555555;
+        }
+        #personal .myOrder .proDescribe div{
+            color:#999999;
+        }
+        #personal .myOrder .price{
+            width:22%;
+            height: 160px;
+            line-height: 160px;
+        }
+        #personal .myOrder .num{
+            width:10%;
+            height: 160px;
+            line-height: 160px;
+        }
+        #personal .myOrder .status{
+            height: 100%;
+            right: 14%;
+            border-right: 1px solid #f3f3f3;
+            width: 11%;
+        }
+        #personal .myOrder .status span{
+            display: inline-block;
+            width: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+        #personal .myOrder .handle{
+            right:3%;
+            top:50%;
+            transform: translateY(-50%);
+        }
+        #personal .myOrder .orderMsgBottom{
+            text-align: right;
+            border-top:1px solid #f3f3f3;
+            line-height: 60px;
+        }
+        #personal .myOrder .orderMsgBottom span{
+            color:#f3595b;
+            margin-left:5px;
+        }
+        #personal .myOrder .orderMsgBottom span:before{
+            content:'¥';
+            color:#f3595b;
+        }
+        #personal .myOrder .orderMsgBottom .inlineDis{
+            width:120px;
+            height:43px;
+            line-height: 43px;
+            background:#64d460;
+            color:#fff;
+            text-align: center;
+            border-radius:6px;
+            margin:0 10px
+        }
+        #personal .myOrder .orderPage1{
+            display: none;
+        }
+        #personal .myOrder .orderPage2{
+            font-size: 14px;
+            display: none;
+        }
+        #personal .myOrder .orderPage2 h3{
+            font-weight: normal;
+            font-size: 18px;
+            margin-top:30px;
+        }
+        #personal .myOrder .orderPage2 p{
+            line-height: 30px;
+        }
+        #personal .orderPage2 .orderDetail{
+            padding: 15px 0;
+            border-bottom:1px solid #f3f3f3;
+        }
+        #personal .orderPage2 .orderDetail .evaluateBtn{
+            bottom:25px;
+            right:25px;
+            width:120px;
+            height:43px;
+            line-height: 43px;
+            background:#64d460;
+            color:#fff;
+            border-radius:6px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+
+        /*晒单评价*/
+        #personal .myEvaluate{
+            display: none;
+        }
+        #personal .myEvaluate .evaluateTag{
+            line-height: 60px;
+            margin-left:-15px;
+        }
+        #personal .myEvaluate .evaluateTag span{
+            padding: 0 15px;
+        }
+        #personal .myEvaluate .evaluateTag span.active{
+            color:#64d460;
+        }
+        #personal .myEvaluate .evaluateTag span:nth-child(n+2){
+            border-left:1px solid #f3f3f3;
+        }
+        #personal .myEvaluate .myEvaluateTitle{
+            text-align: center;
+            height:50px;
+            line-height: 50px;
+            background: #f9fff9;
+            border:1px solid #e8e8e8;
+            color:#777777;
+            border-radius:8px;
+            margin:0 0 20px 0;
+        }
+        #personal .myEvaluate .myEvaluateMsgTop{
+            background: #f9f9f9;
+            border-bottom:1px solid #f3f3f3;
+            height:50px;
+            line-height: 50px;
+            text-indent: 25px;
+            font-size: 16px;
+            color:#999999;
+            box-sizing: border-box;
+        }
+        #personal .myEvaluate .myEvaluateMsgCon{
+            width:100%;
+            box-sizing: border-box;
+            border-left:1px solid #f3f3f3;
+            border-right:1px solid #f3f3f3;
+            border-bottom:1px solid #f3f3f3;
+        }
+        #personal .myEvaluate .myEvaluateProds{
+            width:70%;
+            border-right:1px solid #f3f3f3;
+        }
+        #personal .myEvaluate .myEvaluateProds li{
+            height: 160px;
+        }
+        #personal .myEvaluate .myEvaluateProds li:nth-child(n+2){
+            border-top:1px solid #f3f3f3;
+        }
+        #personal .myEvaluate .proImg{
+            width:18%;
+            margin-left:4%;
+            transform: translateY(20%);
+        }
+        #personal .myEvaluate .proDescribe{
+            width:72%;
+            margin-left:3%;
+            transform: translateY(110%);
+        }
+
+        #personal .myEvaluate .proDescribe p{
+            color:#555555;
+        }
+        #personal .myEvaluate .proDescribe div{
+            color:#999999;
+        }
+        #personal .myEvaluate .status{
+            height: 100%;
+            right: 14%;
+            border-right: 1px solid #f3f3f3;
+            width: 11%;
+        }
+        #personal .myEvaluate .status span{
+            display: inline-block;
+            width: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #personal .myEvaluate .handle{
+            right:4%;
+            top:50%;
+            transform: translateY(-50%);
+            color:#64d460;
+        }
+        #personal .myEvaluate .lookOver,#personal .myEvaluate .evaluating{
+            padding: 30px;
+            background:#f7f7f7;
+            position: relative;
+            margin-bottom:20px;
+        }
+        #personal .myEvaluate .lookOver:before,#personal .myEvaluate .evaluating:before{
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: 6%;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #f7f7f7;
+        }
+        #personal .myEvaluate .line{
+            margin-bottom:5px;
+        }
+        #personal .myEvaluate .line>span{
+            margin-right:1%;
+            width:8%;
+        }
+        #personal .myEvaluate .line>em{
+            width:91%;
+            color:#999999;
+        }
+        #personal .myEvaluate .evaluatePic li{
+            float: left;
+            width:140px;
+            height:140px;
+            overflow: hidden;
+            padding: 2px;
+            border:1px solid #d2d2d2;
+            line-height: 140px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #personal .myEvaluate .evaluatePic li:nth-child(n+2){
+            margin-left:8px;
+
+        }
+        #personal .myEvaluate .evaluating p{
+            height: 40px;
+        }
+        #personal .myEvaluate .evaluating textarea{
+            resize:none;
+            width:100%;
+            height:230px;
+            border:1px solid #64d460;
+            margin:8px 0 15px 0;
+        }
+        #personal .myEvaluate .evaluating .commitBtn{
+            width:120px;
+            height:43px;
+            line-height: 43px;
+            background:#64d460;
+            color:#fff;
+            border-radius:6px;
+            text-align: center;
+            font-size: 16px;
+            margin:20px 0 10px 0;
+        }
+        /*退货申请*/
+        #personal .salesReturn{
+            display: none;
+
+        }
+        #personal .salesReturn .salesReturnTitle{
+            text-align: center;
+            height:50px;
+            line-height: 50px;
+            background: #f9fff9;
+            border:1px solid #e8e8e8;
+            color:#777777;
+            border-radius:8px;
+        }
+        #personal .salesReturn .salesReturnCon{
+            width:100%;
+        }
+        #personal .salesReturn .orderProds{
+            width:70%;
+            border-right:1px solid #f3f3f3;
+        }
+        #personal .salesReturn .orderProds li{
+            height: 160px;
+        }
+        #personal .salesReturn .orderProds li:nth-child(n+2){
+            border-top:1px solid #f3f3f3;
+        }
+        #personal .salesReturn .proImg{
+            width:18%;
+            margin-left:4%;
+            transform: translateY(20%);
+        }
+        #personal .salesReturn .proDescribe{
+            width:40%;
+            margin-left:3%;
+            transform: translateY(110%);
+        }
+
+        #personal .salesReturn .proDescribe p{
+            color:#555555;
+        }
+        #personal .salesReturn .proDescribe div{
+            color:#999999;
+        }
+        #personal .salesReturn .price{
+            width:22%;
+            height: 160px;
+            line-height: 160px;
+        }
+        #personal .salesReturn .num{
+            width:10%;
+            height: 160px;
+            line-height: 160px;
+        }
+        #personal .salesReturn .status{
+            height: 100%;
+            right: 14%;
+            border-right: 1px solid #f3f3f3;
+            width: 11%;
+        }
+        #personal .salesReturn .status span{
+            display: inline-block;
+            width: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #personal .salesReturn .handle{
+            right:4%;
+            top:50%;
+            transform: translateY(-50%);
+        }
+        #personal .salesReturn .salesReturnBottom{
+            text-align: right;
+            border-top:1px solid #f3f3f3;
+            line-height: 60px;
+        }
+        #personal .salesReturn .salesReturnBottom span{
+            color:#f3595b;
+            margin-left:5px;
+        }
+        #personal .salesReturn .salesReturnBottom span:before{
+            content:'¥';
+            color:#f3595b;
+        }
+        #personal .salesReturn .salesReturnBottom .inlineDis{
+            width:120px;
+            height:43px;
+            line-height: 43px;
+            background:#64d460;
+            color:#fff;
+            text-align: center;
+            border-radius:6px;
+            margin:0 10px
+        }
+        #personal .salesReturnTop{
+            background: #f9f9f9;
+            border-bottom:1px solid #f3f3f3;
+            height:50px;
+            line-height: 50px;
+            text-indent: 25px;
+            font-size: 16px;
+            color:#999999;
+            box-sizing: border-box;
+        }
+        #personal .salesReturnTop span{
+            margin-right:25px;
+        }
+        #personal .salesReturn .content{
+            line-height:60px;
+        }
+        #personal .salesReturn .content input,#personal .salesReturn .content select{
+            display: inline-block;
+            border:1px solid #eeeeee;
+            height:36px;
+            border-radius: 4px;
+        }
+        #personal .salesReturn .content input{
+            width:800px;
+        }
+        #personal .salesReturn .tips{
+            background:#fffae3;
+            padding:20px;
+            border-radius:4px;
+        }
+        #personal .salesReturn .tips p{
+            height: 32px;
+        }
+        #personal .salesReturn .tips div{
+            line-height: 28px;
+        }
+        #personal .salesReturn .commitBtns{
+            line-height:44px;
+        }
+        #personal .salesReturn .commitBtns span{
+            display: inline-block;
+            width:146px;
+            height:46px;
+            background: #64d460;
+            color:#fff;
+            border-radius: 4px;
+            margin-right:30px;
+            text-align: center;
+        }
+        #personal .salesReturn .commitBtns em{
+            display: inline-block;
+            width:146px;
+            height:46px;
+            background: #f5f5f5;
+            color:#9f9f9f;
+            border-radius: 4px;
+            text-align:center;
+        }
+        /*退货退款列表*/
+        #personal .saleReturnList{
+            display: none;
+        }
+        #personal .saleReturnList li{
+            margin-bottom:20px;
+        }
+        #personal .saleReturnList .salesReturnTitle{
+            text-align: center;
+            height:50px;
+            line-height: 50px;
+            background: #f9fff9;
+            border:1px solid #e8e8e8;
+            color:#777777;
+            border-radius:8px;
+        }
+        #personal .saleReturnList .salesReturnCon{
+            width:100%;
+        }
+        #personal .saleReturnList .orderProds{
+            width:70%;
+            border-right:1px solid #f3f3f3;
+        }
+        #personal .saleReturnList .orderProds li{
+            height: 160px;
+        }
+        #personal .saleReturnList .orderProds li:nth-child(n+2){
+            border-top:1px solid #f3f3f3;
+        }
+        #personal .saleReturnList .proImg{
+            width:18%;
+            margin-left:4%;
+            transform: translateY(20%);
+        }
+        #personal .saleReturnList .proDescribe{
+            width:40%;
+            margin-left:3%;
+            transform: translateY(110%);
+        }
+
+        #personal .saleReturnList .proDescribe p{
+            color:#555555;
+        }
+        #personal .saleReturnList .proDescribe div{
+            color:#999999;
+        }
+        #personal .saleReturnList .price{
+            width:22%;
+            height: 160px;
+            line-height: 160px;
+        }
+        #personal .saleReturnList .num{
+            width:10%;
+            height: 160px;
+            line-height: 160px;
+        }
+        #personal .saleReturnList .status{
+            height: 100%;
+            right: 14%;
+            border-right: 1px solid #f3f3f3;
+            width: 11%;
+        }
+        #personal .saleReturnList .status span{
+            display: inline-block;
+            width: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #personal .saleReturnList .handle{
+            right:4%;
+            top:50%;
+            transform: translateY(-50%);
+        }
+        #personal .saleReturnList .salesReturnBottom{
+            text-align: right;
+            border-top:1px solid #f3f3f3;
+            line-height: 60px;
+        }
+        #personal .saleReturnList .salesReturnBottom span{
+            color:#f3595b;
+            margin-left:5px;
+        }
+        #personal .saleReturnList .salesReturnBottom span:before{
+            content:'¥';
+            color:#f3595b;
+        }
+        #personal .saleReturnList .salesReturnBottom .inlineDis{
+            width:120px;
+            height:43px;
+            line-height: 43px;
+            background:#64d460;
+            color:#fff;
+            text-align: center;
+            border-radius:6px;
+            margin:0 10px
+        }
+        #personal .salesReturnTop{
+            background: #f9f9f9;
+            border-bottom:1px solid #f3f3f3;
+            height:50px;
+            line-height: 50px;
+            text-indent: 25px;
+            font-size: 16px;
+            color:#999999;
+            box-sizing: border-box;
+        }
+        #personal .salesReturnTop span{
+            margin-right:25px;
+        }
+        /*密码修改*/
+        #personal .alterPassword{
+            font-size: 16px;
+        }
+        #personal .alterPassword dl{
+            margin-top:40px;
+        }
+        #personal .alterPassword dt{
+            line-height: 65px;
+            width:100px;
+            height: 65px;
+            float:left;
+            clear:both;
+            margin-right:10px;
+            text-align: right;
+        }
+        #personal .alterPassword dd{
+            float:left;
+            line-height: 65px;
+        }
+        #personal .alterPassword input{
+            display: inline-block;
+            height:40px;
+            width:340px;
+            border:1px solid #f1f1f1;
+            border-radius:4px;
+            margin-left:8px;
+        }
+        #personal .alterPassword em{
+            display: inline-block;
+            width:20px;
+            height:20px;
+            background: url("img/tip.png")no-repeat left;
+            background-size:contain;
+            vertical-align: middle;
+            margin:0 5px;
+        }
+        #personal .alterPassword .confirmBtn{
+            width:140px;
+            height:40px;
+            line-height: 40px;
+            background: #64d460;
+            color:#fff;
+            text-align: center;
+            border-radius:4px;
+            margin: 20px 0 0 10px;
+            cursor:pointer;
+        }
+
+    </style>
+</head>
+<body style="background: #f4f4f4">
+<!--头部-->
+<div id="header" class="rel">
+    <div class="logo abs">
+        <img src="img/qdlogo.png" alt="">
+    </div>
+    <div class="headContent">
+        <ul class="clearfix">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="prodList.html">产品中心</a></li>
+            <li><a href="helpCenter.html">帮助中心</a></li>
+            <li><a href="">关于我们</a></li>
+        </ul>
+    </div>
+    <div class="headRight abs clearfix">
+        <ul class="languageChange clearfix fl">
+            <li>繁体站</li>
+            <li>|</li>
+            <li>英文站</li>
+        </ul>
+        <ul class="btns clearfix fl">
+            <li class="searchBtn rel">
+                <img src="img/search.png" alt="">
+                <input class="searchLine abs">
+                <div class="abs block"></div>
+            </li>
+            <li>
+                <img src="img/personal.png" alt="">
+            </li>
+            <li class="rel">
+                <a href="buyCar.html">
+                    <img src="img/buycar.png" alt="">
+                    <div class="prodsNum abs">2</div>
+                </a>
+
+            </li>
+        </ul>
+    </div>
+    <!--产品中心产品-->
+    <div class="combo-box">
+        <div class="content">
+            <dl class="list list-1">
+                <dt>主题玩具</dt>
+                <dd><a href="" title="清洁系列">奇艺村</a></dd>
+                <dd><a href="" title="比菲德修复系列">治心系列</a></dd>
+                <dd><a href="" title="雪络玛意德美白系列">亲亲</a></dd>
+                <dd><a href="" title="库库马伦抗皱系列">治心系列</a></dd>
+                <dd><a href="" title="啊媞绰克紧致系列">边位家族</a></dd>
+                <dd><a href="" title="帕莎莉草本系列">治心系列</a></dd>
+                <dd><a href="" title="护肤彩妆系列">亲亲</a></dd>
+                <dd><a href="" title="啊莎媞咔镇定系列">边位家族</a></dd>
+            </dl>
+            <dl class="list list-2">
+                <dt>文化书刊</dt>
+                <dd><a href="" title="清洁/卸妆/去角质">奇艺村</a></dd>
+                <dd><a href="" title="眼唇护理">亲亲</a></dd>
+                <dd><a href="" title="安瓶/精华">治心系列</a></dd>
+                <dd><a href="" title="水/乳/霜">边位家族</a></dd>
+                <dd><a href="" title="隔离防护">亲亲</a></dd>
+                <dd><a href="" title="面膜">边位家族</a></dd>
+            </dl>
+            <dl class="list list-3">
+                <dt>品牌服装</dt>
+                <dd><a href="" title="敏感肌|舒缓受损">治心系列</a></dd>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+            <dl class="list list-4">
+                <dt>农产品</dt>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+            <dl class="list list-5">
+                <dt>法律援助</dt>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+        </div>
+    </div>
+    <!--登录展示-->
+    <ul class="loginModule abs">
+        <li><a href="login.html">账户登录</a></li>
+        <li><a href="">注册账户</a></li>
+    </ul>
+</div>
+<!--帮助中心-->
+<div id="personal" class="clearfix">
+    <ul class="personalTitle fl">
+        <li class="title"><span class="title_icon1"></span><em>订单中心</em></li>
+        <li>我的订单</li>
+        <li>晒单评价</li>
+        <li>退货/退款</li>
+        <li class="title"><span class="title_icon2"></span><em>我的账户</em></li>
+        <li>个人信息</li>
+        <li>修改密码</li>
+        <li>收货地址</li>
+    </ul>
+    <ul class="rightCon fr">
+        <!--个人信息-->
+        <li class="userMsg">
+            <h2>个人信息</h2>
+            <form action="">
+                <dl class="clearfix">
+                    <dt>当前头像:</dt>
+                    <dd class="logo">
+                        <span class="rel">
+                            <img src="img/detailProds/prince.png" alt="">
+                            <div class="abs changeLogo">更换头像</div>
+                        </span>
+                    </dd>
+                    <dt>用户名:</dt>
+                    <dd><input type="text" class="nickName"></dd>
+                    <dt>性别:</dt>
+                    <dd class="gender"><span></span>男<em></em>女</dd>
+                    <dt>生日:</dt>
+                    <dd class="dataSelect">
+                        <select id="sel_year" rel="1992"> </select> 年
+                        <select id="sel_month" rel="6"> </select> 月
+                        <select id="sel_day" rel="12"> </select> 日
+                    </dd>
+                    <dt>居住地:</dt>
+                    <dd>
+                        <div data-toggle="distpicker" class="cityPicker">
+                        <select  id="province1"></select>
+                        <select  id="city1"></select>
+                        <select  id="district1"></select>
+                    </div></dd>
+                    <dt></dt>
+                    <dd class="saveBtn">
+                        保存
+                    </dd>
+                </dl>
+            </form>
+        </li>
+        <!--收货地址-->
+        <li class="addressManage">
+            <h2>收货地址</h2>
+            <form action="">
+                <dl class="clearfix">
+                    <dt>收货人姓名:</dt>
+                    <dd>
+                        <input type="text" value="xk">
+                    </dd>
+                    <dt>收货地址:</dt>
+                    <dd>
+                        <div data-toggle="distpicker" class="cityPicker">
+                            <select  id="province1"></select>
+                            <select  id="city1"></select>
+                            <select  id="district1"></select>
+                        </div>
+                    </dd>
+                    <dt>详细地址:</dt>
+                    <dd>
+                        <input type="text" value="深圳南山区比克大厦" class="addressDetail">
+                    </dd>
+                    <dt>手机:</dt>
+                    <dd><input type="text" vlaue="134222222"  class="tel"></dd>
+                    <dt>邮箱:</dt>
+                    <dd><input type="text" value="616182298@qq.com"  class="email"></dd>
+                    <dt></dt>
+                    <dd class="setDefault"><i class="check"></i>设为默认收货地址</dd>
+                    <dt></dt>
+                    <dd class="btns"><span class="saveBtn">保存</span><em class="cancelBtn">取消</em></dd>
+                </dl>
+
+            </form>
+            <table cellpadding="0" class="addressContent">
+                <thead>
+                <tr>
+                    <th width="380">收件人</th>
+                    <th width="360">地址</th>
+                    <th width="280">手机</th>
+                    <th width="240">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="line">
+                    <td>
+                        哈哈哈
+                    </td>
+                    <td>
+                        广东省 深圳市 南山区 粤海街道 科研路9号比克大厦2101-B
+                    </td>
+                    <td>
+                        13569898988
+                    </td>
+                    <td>
+                        <ul class="clearfix">
+                            <li>编辑</li>
+                            <li>删除</li>
+                            <li>设为默认</li>
+                        </ul>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        <!--我的订单-->
+        <li class="myOrder">
+            <!--订单列表-->
+            <div class="orderPage1">
+                <h2>我的订单</h2>
+                <ul class="clearfix orderTag">
+                    <li>全部</li>
+                    <li>待付款</li>
+                    <li>待收货</li>
+                    <li>已完成</li>
+                    <li>已关闭</li>
+                </ul>
+                <table cellpadding="0" class="orderTitle">
+                    <thead>
+                    <tr>
+                        <th width="440">商品名称</th>
+                        <th width="160">价格</th>
+                        <th width="160">数量</th>
+                        <th width="160">状态</th>
+                        <th width="160">操作</th>
+                    </tr>
+                    </thead>
+                </table>
+                <!--订单列表-->
+                <ul class="orderList">
+                    <li>
+                        <div class="orderMsgTop">
+                            订单号: <span>17042059791727118907</span>
+                            时间: <em>2017-04-21  16:36:31</em>
+                        </div>
+                        <div class="clearfix orderMsgCon rel">
+                            <div class="fl orderProds">
+                                <ul>
+                                    <li class="clearfix">
+                                        <div class="fl proImg">
+                                            <img src="img/detailProds/prince.png" alt="">
+                                        </div>
+                                        <div class="fl proDescribe">
+                                            <p>小王子/儿童文学经典系列</p>
+                                            <div>版本：精装双语版</div>
+
+                                        </div>
+                                        <div class="fl price">
+                                            199.99
+                                        </div>
+                                        <div class="fl num">
+                                            1
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="fl proImg">
+                                            <img src="img/detailProds/prince.png" alt="">
+                                        </div>
+                                        <div class="fl proDescribe">
+                                            <p>小王子/儿童文学经典系列</p>
+                                            <div>版本：精装双语版</div>
+
+                                        </div>
+                                        <div class="fl price">
+                                            199.99
+                                        </div>
+                                        <div class="fl num">
+                                            1
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="fl proImg">
+                                            <img src="img/detailProds/prince.png" alt="">
+                                        </div>
+                                        <div class="fl proDescribe">
+                                            <p>小王子/儿童文学经典系列</p>
+                                            <div>版本：精装双语版</div>
+
+                                        </div>
+                                        <div class="fl price">
+                                            199.99
+                                        </div>
+                                        <div class="fl num">
+                                            1
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="abs status">
+                            <span class="abs">
+                                待收货
+                            </span>
+                            </div>
+                            <div class="abs handle">
+                                查看订单
+                            </div>
+                        </div>
+                        <div class="orderMsgBottom">
+                            总计: <span>199.00</span>(含运费: ¥<em>0.00</em> 优惠: ¥<i>0.00</i>)<div class="inlineDis">确认收货</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="orderMsgTop">
+                            订单号: <span>17042059791727118907</span>
+                            时间: <em>2017-04-21  16:36:31</em>
+                        </div>
+                        <div class="clearfix orderMsgCon rel">
+                            <div class="fl orderProds">
+                                <ul>
+                                    <li class="clearfix">
+                                        <div class="fl proImg">
+                                            <img src="img/detailProds/prince.png" alt="">
+                                        </div>
+                                        <div class="fl proDescribe">
+                                            <p>小王子/儿童文学经典系列</p>
+                                            <div>版本：精装双语版</div>
+
+                                        </div>
+                                        <div class="fl price">
+                                            199.99
+                                        </div>
+                                        <div class="fl num">
+                                            1
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="abs status">
+                            <span class="abs">
+                                待收货
+                            </span>
+                            </div>
+                            <div class="abs handle">
+                                查看订单
+                            </div>
+                        </div>
+                        <div class="orderMsgBottom">
+                            总计: <span>199.00</span>(含运费: ¥<em>0.00</em> 优惠: ¥<i>0.00</i>)<div class="inlineDis">确认收货</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--订单详情-->
+            <div class="orderPage2">
+                <h3>物流信息</h3>
+                <p>发货方式:快递</p>
+                <p>物流公司: <span class="">中通快递</span></p>
+                <p>运单号码: <span>43522127942</span></p>
+                <p>物流跟踪:</p>
+                <ul>
+                    <li>2017-04-20 19:36:05             您的订单待配货</li>
+                </ul>
+                <h3>订单信息</h3>
+                <div class="rel orderDetail">
+                    <p>订单号: <span>16122343228398218907</span></p>
+                    <p>订单金额: <span>¥2798.00</span></p>
+                    <p>订单状态: <span>完成</span></p>
+                    <div class="abs evaluateBtn">
+                        去评价
+                    </div>
+                </div>
+                <div class="orderDetail">
+                    <p>收货信息: <span>李洁 、18825294554、广东省深圳市宝安区民治街道民康路樟坑一区24栋206 </span></p>
+                    <p>运送方式: <span>快递</span></p>
+                </div>
+                <div class="orderDetail">
+                    <p>支付方式: <span>支付宝</span></p>
+                    <p>发票类型: <span>个人</span></p>
+                    <p>发票抬头: <span>哈哈</span></p>
+                </div>
+                <div style="margin:15px 0">
+                    <table cellpadding="0" class="orderTitle">
+                        <thead>
+                        <tr>
+                            <th width="550">商品名称</th>
+                            <th width="140">价格</th>
+                            <th width="140">数量</th>
+                            <th width="140">状态</th>
+                        </tr>
+                        </thead>
+                    </table>
+                    <div style="border-left:1px solid #f3f3f3; border-right:1px solid #f3f3f3;border-bottom:1px solid #f3f3f3;">
+                        <div class="clearfix orderMsgCon rel">
+                            <div class="fl orderProds">
+                                <ul>
+                                    <li class="clearfix">
+                                        <div class="fl proImg">
+                                            <img src="img/detailProds/prince.png" alt="">
+                                        </div>
+                                        <div class="fl proDescribe">
+                                            <p>小王子/儿童文学经典系列</p>
+                                            <div>版本：精装双语版</div>
+
+                                        </div>
+                                        <div class="fl price">
+                                            199.99
+                                        </div>
+                                        <div class="fl num">
+                                            1
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="abs status">
+                            <span class="abs">
+                                待收货
+                            </span>
+                            </div>
+                            <div class="abs handle">
+                                查看订单
+                            </div>
+                        </div>
+                        <div class="orderMsgBottom">
+                            总计: <span>199.00</span>(含运费: ¥<em>0.00</em> 优惠: ¥<i>0.00</i>)
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+        <!--晒单评价-->
+        <li class="myEvaluate">
+            <h2>我的评价</h2>
+            <div class="evaluateTag">
+                <span class="active">已评价</span><span>未评价</span>
+            </div>
+            <!--评价说明栏-->
+            <table cellpadding="0" class="myEvaluateTitle">
+                <thead>
+                <tr>
+                    <th width="950">商品名称</th>
+                    <th width="200">状态</th>
+                    <th width="200">操作</th>
+                </tr>
+                </thead>
+            </table>
+            <!--已评价-->
+            <ul class="did">
+                <li>
+                    <div class="myEvaluateMsgTop">
+                        订单号: <span>17042059791727118907</span>
+                        时间: <em>2017-04-21  16:36:31</em>
+                    </div>
+                    <div class="clearfix myEvaluateMsgCon rel">
+                        <div class="fl myEvaluateProds">
+                            <ul>
+                                <li class="clearfix">
+                                    <div class="fl proImg">
+                                        <img src="img/detailProds/prince.png" alt="">
+                                    </div>
+                                    <div class="fl proDescribe">
+                                        <p>小王子/儿童文学经典系列</p>
+                                        <div>版本：精装双语版</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="abs status">
+                            <span class="abs">
+                                交易成功
+                            </span>
+                        </div>
+                        <div class="abs handle">
+                            查看评价
+                        </div>
+                    </div>
+                    <div class="lookOver">
+                        <div class="clearfix line">
+                            <span class="fl">综合评分:</span>
+                            <em class="fl"><span></span><span></span><span></span><span></span><span></span></em>
+                        </div>
+                        <div class="clearfix line">
+                            <span class="fl">评价内容:</span>
+                            <em class="fl">前几天听说小王子很火的时候，我就买了一本，包装精美，我绝对是选我值得信赖的了，果然不让我失望，好几本 书都是在你家买的，还是好</em>
+                        </div>
+                        <div class="clearfix line">
+                            <span class="fl">评价图片:</span>
+                            <em class="fl">
+                                <ul class="evaluatePic clearfix">
+                                    <li>
+                                        <img src="img/detailProds/prince.png" alt="">
+                                    </li>
+                                </ul>
+                            </em>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!--未评价-->
+            <ul class="not">
+                <div class="myEvaluateMsgTop">
+                    订单号: <span>17042059791727118907</span>
+                    时间: <em>2017-04-21  16:36:31</em>
+                </div>
+                <div class="clearfix myEvaluateMsgCon rel">
+                    <div class="fl myEvaluateProds">
+                        <ul>
+                            <li class="clearfix">
+                                <div class="fl proImg">
+                                    <img src="img/detailProds/prince.png" alt="">
+                                </div>
+                                <div class="fl proDescribe">
+                                    <p>小王子/儿童文学经典系列</p>
+                                    <div>版本：精装双语版</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="abs status">
+                            <span class="abs">
+                                交易成功
+                            </span>
+                    </div>
+                    <div class="abs handle">
+                        去评价
+                    </div>
+                </div>
+                <div class="evaluating">
+                    <p>发表评价</p>
+                    <div class="clearfix line">
+                        <span class="fl">综合评分:</span>
+                        <em class="fl"><span></span><span></span><span></span><span></span><span></span></em>
+                    </div>
+                    <div>评价内容:</div>
+                    <textarea name="" id="" cols="30" rows="10">前几天听说小王子很火的时候，我就买了一本，包装精美，我绝对是选我值得信赖的了，果然不让我失望，好几本 书都是在你家买的，还是好</textarea>
+                    <div class="clearfix line">
+                        <span class="fl">评价图片:</span>
+                        <em class="fl">
+                            <ul class="evaluatePic clearfix">
+                                <li>
+                                    <img src="img/detailProds/prince.png" alt="">
+                                </li>
+                                <li>
+                                   添加图片
+                                </li>
+                            </ul>
+                        </em>
+                    </div>
+                    <div class="commitBtn">
+                        发表评价
+                    </div>
+                </div>
+            </ul>
+        </li>
+        <!--退货申请-->
+        <li class="salesReturn">
+            <h2>退款申请</h2>
+            <div>
+                <table cellpadding="0" class="salesReturnTitle">
+                    <thead>
+                    <tr>
+                        <th width="550">商品名称</th>
+                        <th width="140">价格</th>
+                        <th width="140">数量</th>
+                        <th width="140">状态</th>
+                    </tr>
+                    </thead>
+                </table>
+                <div style="border-left:1px solid #f3f3f3; border-right:1px solid #f3f3f3;border-bottom:1px solid #f3f3f3;">
+                    <div class="salesReturnTop">
+                        订单号: <span>17042059791727118907</span>
+                        时间: <em>2017-04-21  16:36:31</em>
+                    </div>
+                    <div class="clearfix salesReturnCon rel">
+                        <div class="fl orderProds">
+                            <ul>
+                                <li class="clearfix">
+                                    <div class="fl proImg">
+                                        <img src="img/detailProds/prince.png" alt="">
+                                    </div>
+                                    <div class="fl proDescribe">
+                                        <p>小王子/儿童文学经典系列</p>
+                                        <div>版本：精装双语版</div>
+
+                                    </div>
+                                    <div class="fl price">
+                                        199.99
+                                    </div>
+                                    <div class="fl num">
+                                        1
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="abs status">
+                            <span class="abs">
+                                待收货
+                            </span>
+                        </div>
+                        <div class="abs handle">
+                            查看订单
+                        </div>
+                    </div>
+                    <div class="salesReturnBottom">
+                        总计: <span>199.00</span>(含运费: ¥<em>0.00</em> 优惠: ¥<i>0.00</i>)
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div>退款原因:
+                    <select name="reason">
+                        <option value="">我不想要了</option>
+                        <option value="">商品与描述不服</option>
+                        <option value="">其他原因</option>
+                    </select>
+                </div>
+                <div>退款详情: <input type="text"></div>
+                <div>退款方式: 退款至付款账户中</div>
+            </div>
+            <div class="tips">
+                <p>温馨提示:</p>
+                <div>1、申请提交后商城工作人员会在7个工作日内联系您 2、如需部分退款请联系客服。</div>
+                <div>2、如需部分退款请联系客服。</div>
+            </div>
+            <div class="commitBtns">
+                <span>提交申请</span><em>返回</em>
+            </div>
+
+        </li>
+        <!--退货订单列表-->
+        <li class="saleReturnList">
+            <table cellpadding="0" class="salesReturnTitle">
+                <thead>
+                <tr>
+                    <th width="550">商品名称</th>
+                    <th width="140">价格</th>
+                    <th width="140">数量</th>
+                    <th width="140">状态</th>
+                </tr>
+                </thead>
+            </table>
+            <ul>
+                <li>
+                    <div style="border-left:1px solid #f3f3f3; border-right:1px solid #f3f3f3;border-bottom:1px solid #f3f3f3;">
+                        <div class="salesReturnTop">
+                            订单号: <span>17042059791727118907</span>
+                            时间: <em>2017-04-21  16:36:31</em>
+                        </div>
+                        <div class="clearfix salesReturnCon rel">
+                            <div class="fl orderProds">
+                                <ul>
+                                    <li class="clearfix">
+                                        <div class="fl proImg">
+                                            <img src="img/detailProds/prince.png" alt="">
+                                        </div>
+                                        <div class="fl proDescribe">
+                                            <p>小王子/儿童文学经典系列</p>
+                                            <div>版本：精装双语版</div>
+
+                                        </div>
+                                        <div class="fl price">
+                                            199.99
+                                        </div>
+                                        <div class="fl num">
+                                            1
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="abs status">
+                            <span class="abs">
+                                待收货
+                            </span>
+                            </div>
+                            <div class="abs handle">
+                                查看订单
+                            </div>
+                        </div>
+                        <div class="salesReturnBottom">
+                            总计: <span>199.00</span>(含运费: ¥<em>0.00</em> 优惠: ¥<i>0.00</i>)
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="border-left:1px solid #f3f3f3; border-right:1px solid #f3f3f3;border-bottom:1px solid #f3f3f3;">
+                        <div class="salesReturnTop">
+                            订单号: <span>17042059791727118907</span>
+                            时间: <em>2017-04-21  16:36:31</em>
+                        </div>
+                        <div class="clearfix salesReturnCon rel">
+                            <div class="fl orderProds">
+                                <ul>
+                                    <li class="clearfix">
+                                        <div class="fl proImg">
+                                            <img src="img/detailProds/prince.png" alt="">
+                                        </div>
+                                        <div class="fl proDescribe">
+                                            <p>小王子/儿童文学经典系列</p>
+                                            <div>版本：精装双语版</div>
+
+                                        </div>
+                                        <div class="fl price">
+                                            199.99
+                                        </div>
+                                        <div class="fl num">
+                                            1
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="abs status">
+                            <span class="abs">
+                                待收货
+                            </span>
+                            </div>
+                            <div class="abs handle">
+                                查看订单
+                            </div>
+                        </div>
+                        <div class="salesReturnBottom">
+                            总计: <span>199.00</span>(含运费: ¥<em>0.00</em> 优惠: ¥<i>0.00</i>)
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <!--修改密码-->
+        <li class="alterPassword">
+            <h2>修改密码</h2>
+            <dl class="clearfix">
+                <dt>旧密码:</dt>
+                <dd> <input type="password"></dd>
+                <dt>新密码: </dt>
+                <dd> <input type="password"></dd>
+                <dt>再次输入密码: </dt>
+                <dd><input type="password"><span><em></em>两次输入密码不一致</span></dd>
+                <dt></dt>
+                <dd class="confirmBtn">确认修改</dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!--底部-->
+<div id="footer"class="rel">
+    <ul class="footerMsg clearfix">
+        <li class="rel">
+            <a href="">新手上路</a>
+            <ul class="abs">
+                <li><a href="">顾客必读</a></li>
+                <li><a href="">订单的几种状态</a></li>
+            </ul>
+        </li>
+        <li class="rel">
+            <a href="">购物指南</a>
+            <ul class="abs">
+                <li><a href="">非会员购物通道</a></li>
+                <li><a href="">网站使用条款</a></li>
+                <li><a href="">网站免责声明</a></li>
+                <li><a href="">购物流程</a></li>
+            </ul>
+        </li>
+        <li class="rel">
+            <a href="">支付与配送</a>
+            <ul class="abs">
+                <li><a href="">支付方式</a></li>
+                <li><a href="">订单何时出库?</a></li>
+                <li><a href="">关于送货验货</a></li>
+            </ul>
+        </li>
+        <li class="rel">
+            <a href="">购物条款</a>
+            <ul class="abs">
+                <li><a href="">会员注册协议</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="serviceCall abs">
+        <li>服务热线</li>
+        <li>86-755-26885651</li>
+        <li>周一至周五 8:00-18:00</li>
+        <li>邮箱地址：xkygame.163.com</li>
+    </ul>
+    <div class="aboutWebsite abs">
+        ©2017 xky Telecom Equipment Co., Ltd. All rights reserved. 备案号:451345454545
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/distpicker.data.js"></script>
+<script src="js/distpicker.js"></script>
+<script src="js/jquery.uploadify.min.js"></script>
+<script src="js/birthday.js"></script>
+<script>
+    $(function(){
+        $.ms_DatePicker();
+    })
+</script>
+</body>
+</html>

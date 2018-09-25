@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提交订单成功</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #confirmOrderSuccess{
+            width:1260px;
+            margin: 0 auto;
+        }
+        #confirmOrderSuccess .successHead{
+            width:90%;
+            margin:20px auto;
+        }
+        #confirmOrderSuccess .successHead .successIcon{
+            width:79px;
+            height:79px;
+            background:url(img/successIcon.png) no-repeat left;
+            background-size: contain;
+        }
+        #confirmOrderSuccess .orderNumber{
+            margin-left:10px;
+        }
+        #confirmOrderSuccess .orderNumber div{
+            font-size: 24px;
+            line-height: 48px;
+        }
+        #confirmOrderSuccess .orderNumber p{
+            font-size: 16px;
+            line-height: 32px;
+        }
+        #confirmOrderSuccess .successHead .price>div{
+            line-height: 32px;
+        }
+        #confirmOrderSuccess .successHead .price span{
+            color:#f3595b;
+        }
+        #confirmOrderSuccess .successHead .price span:before{
+            content:'¥';
+            color:#f3595b;
+        }
+        #confirmOrderSuccess .successHead .orderDetailLogo{
+            color:#65d460;
+            text-align: right;
+        }
+        #confirmOrderSuccess .successHead .orderDetailLogo em{
+            display: inline-block;
+            width:12px;
+            height:12px;
+            background: url("img/arrowGreen.png") no-repeat left;
+            background-size: contain;
+            margin-left:6px;
+        }
+        #confirmOrderSuccess .orderDetail{
+            padding:30px;
+            border-radius:6px;
+            background: #f9f9f9;
+            font-size: 14px;
+            color:#555555;
+        }
+        #confirmOrderSuccess .orderDetail li{
+            margin-bottom: 10px;
+        }
+        #confirmOrderSuccess .orderDetail p{
+            line-height: 32px;
+        }
+        #confirmOrderSuccess .payMethod{
+            border:5px solid #d5ffd2;
+            border-radius:4px;
+            margin:20px 0 30px 0;
+        }
+        #confirmOrderSuccess .payMethod li{
+            float:left;
+            height:134px;
+            line-height: 134px;
+            margin-left:34px;
+        }
+        #confirmOrderSuccess .payMethod span{
+            display: inline-block;
+            width:20px;
+            height:20px;
+            background: url("img/nocheck.png") no-repeat left;
+            background-size: contain;
+            vertical-align: middle;
+        }
+        #confirmOrderSuccess .payMethod em{
+            display: inline-block;
+            width:190px;
+            height:56px;
+            vertical-align: middle;
+            border:2px solid #f1f1f1;
+            margin-left:14px;
+        }
+        #confirmOrderSuccess .payMethod li:nth-child(1) em{
+            background: url("img/alipay.png") no-repeat left;
+            background-size: contain;
+        }
+        #confirmOrderSuccess .payMethod li:nth-child(2) em{
+            background: url("img/credit.png") no-repeat left;
+            background-size: contain;
+        }
+        #confirmOrderSuccess .payMethod li.payNow{
+            margin-left:320px;
+        }
+        #confirmOrderSuccess .payMethod li .price{
+            font-size:20px;
+            color:#f3595b;
+        }
+        #confirmOrderSuccess .payMethod li .price:before{
+            content:'¥';
+            color:#f3595b;
+            font-size: 20px;
+        }
+        #confirmOrderSuccess .payMethod li .payBtn{
+            width:200px;
+            height:60px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 22px;
+            background: #65d460;
+            color:#fff;
+            border-radius:6px;
+            margin-left:8px;
+        }
+    </style>
+</head>
+<body>
+<!--头部-->
+<div id="header" class="rel">
+    <div class="logo abs">
+        <img src="img/qdlogo.png" alt="">
+    </div>
+    <div class="headContent">
+        <ul class="clearfix">
+            <li><a href="index.html">首页</a></li>
+            <li class="active"><a href="prodList.html">产品中心</a></li>
+            <li><a href="helpCenter.html">帮助中心</a></li>
+            <li><a href="">关于我们</a></li>
+        </ul>
+    </div>
+    <div class="headRight abs clearfix">
+        <ul class="languageChange clearfix fl">
+            <li>繁体站</li>
+            <li>|</li>
+            <li>英文站</li>
+        </ul>
+        <ul class="btns clearfix fl">
+            <li class="searchBtn rel">
+                <img src="img/search.png" alt="">
+                <input class="searchLine abs">
+                <div class="abs block"></div>
+            </li>
+            <li>
+                <img src="img/personal.png" alt="">
+            </li>
+            <li class="rel">
+                <a href="buyCar.html">
+                    <img src="img/buycar.png" alt="">
+                    <div class="prodsNum abs">2</div>
+                </a>
+
+            </li>
+        </ul>
+    </div>
+    <!--产品中心产品-->
+    <div class="combo-box">
+        <div class="content">
+            <dl class="list list-1">
+                <dt>主题玩具</dt>
+                <dd><a href="" title="清洁系列">奇艺村</a></dd>
+                <dd><a href="" title="比菲德修复系列">治心系列</a></dd>
+                <dd><a href="" title="雪络玛意德美白系列">亲亲</a></dd>
+                <dd><a href="" title="库库马伦抗皱系列">治心系列</a></dd>
+                <dd><a href="" title="啊媞绰克紧致系列">边位家族</a></dd>
+                <dd><a href="" title="帕莎莉草本系列">治心系列</a></dd>
+                <dd><a href="" title="护肤彩妆系列">亲亲</a></dd>
+                <dd><a href="" title="啊莎媞咔镇定系列">边位家族</a></dd>
+            </dl>
+            <dl class="list list-2">
+                <dt>文化书刊</dt>
+                <dd><a href="" title="清洁/卸妆/去角质">奇艺村</a></dd>
+                <dd><a href="" title="眼唇护理">亲亲</a></dd>
+                <dd><a href="" title="安瓶/精华">治心系列</a></dd>
+                <dd><a href="" title="水/乳/霜">边位家族</a></dd>
+                <dd><a href="" title="隔离防护">亲亲</a></dd>
+                <dd><a href="" title="面膜">边位家族</a></dd>
+            </dl>
+            <dl class="list list-3">
+                <dt>品牌服装</dt>
+                <dd><a href="" title="敏感肌|舒缓受损">治心系列</a></dd>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+            <dl class="list list-4">
+                <dt>农产品</dt>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+            <dl class="list list-5">
+                <dt>法律援助</dt>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+        </div>
+    </div>
+    <!--登录展示-->
+    <ul class="loginModule abs">
+        <li><a href="login.html">账户登录</a></li>
+        <li><a href="">注册账户</a></li>
+    </ul>
+</div>
+<!--购物车信息-->
+<div id="confirmOrderSuccess">
+    <div class="buyCarHead rel">
+        <div class="step1 abs">我的购物车</div>
+        <div class="step2 abs">确认订单信息</div>
+        <div class="step3 abs">提交订单</div>
+    </div>
+    <div class="successHead clearfix">
+        <div class="fl successIcon"></div>
+        <div class="fl orderNumber">
+            <div>订单提交成功，请你尽快付款！订单号：17042057714755418907</div>
+            <p>请您在提交订单后24小时内完成付款，逾时订单自动取消</p>
+        </div>
+        <div class="fr price">
+            <div>应付金额：<span>298.00</span>元</div>
+            <div class="orderDetailLogo">订单详情<em class="arrow"></em></div>
+        </div>
+    </div>
+    <div class="orderDetail">
+        <div class="name clearfix">
+            <div class="fl">商品名称：</div>
+            <ul class="fl">
+                <li>小王子儿童文学经典系列 x <span>1</span></li>
+                <li>天佑真心文学经典读物系列 x <span>1</span></li>
+            </ul>
+        </div>
+        <p class="price">交易金额：<span>328.00</span>元</p>
+        <p class="time">交易时间：<span>2017-04-20 16:12:05</span></p>
+        <p class="receive">收货人：<span>李洁</span></p>
+        <p class="call">联系方式：<span>45612313315</span></p>
+        <p class="address">收货地址：<span>深圳市南山区学苑二号路</span></p>
+    </div>
+    <ul class="payMethod clearfix">
+        <li>
+            <span></span><em></em>
+        </li>
+        <li>
+            <span></span><em></em>
+        </li>
+
+        <li class="payNow">
+            支付：<div class="inlineDis price">298.00</div>元 <div class="inlineDis payBtn">立刻支付</div>
+        </li>
+    </ul>
+
+
+
+
+</div>
+<!--底部-->
+<div id="footer"class="rel">
+    <ul class="footerMsg clearfix">
+        <li class="rel">
+            <a href="">新手上路</a>
+            <ul class="abs">
+                <li><a href="">顾客必读</a></li>
+                <li><a href="">订单的几种状态</a></li>
+            </ul>
+        </li>
+        <li class="rel">
+            <a href="">购物指南</a>
+            <ul class="abs">
+                <li><a href="">非会员购物通道</a></li>
+                <li><a href="">网站使用条款</a></li>
+                <li><a href="">网站免责声明</a></li>
+                <li><a href="">购物流程</a></li>
+            </ul>
+        </li>
+        <li class="rel">
+            <a href="">支付与配送</a>
+            <ul class="abs">
+                <li><a href="">支付方式</a></li>
+                <li><a href="">订单何时出库?</a></li>
+                <li><a href="">关于送货验货</a></li>
+            </ul>
+        </li>
+        <li class="rel">
+            <a href="">购物条款</a>
+            <ul class="abs">
+                <li><a href="">会员注册协议</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="serviceCall abs">
+        <li>服务热线</li>
+        <li>86-755-26885651</li>
+        <li>周一至周五 8:00-18:00</li>
+        <li>邮箱地址：xkygame.163.com</li>
+    </ul>
+    <div class="aboutWebsite abs">
+        ©2017 xky Telecom Equipment Co., Ltd. All rights reserved. 备案号:451345454545
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .buyCarEmpty{
+            display: none;
+            line-height: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .delAll:hover{
+            color:#67d460;
+        }
+    </style>
+</head>
+<body>
+<!--头部-->
+<div id="header" class="rel">
+    <div class="logo abs">
+        <img src="img/qdlogo.png" alt="">
+    </div>
+    <div class="headContent">
+        <ul class="clearfix">
+            <li><a href="index.html">首页</a></li>
+            <li class="active"><a href="prodList.html">产品中心</a></li>
+            <li><a href="helpCenter.html">帮助中心</a></li>
+            <li><a href="">关于我们</a></li>
+        </ul>
+    </div>
+    <div class="headRight abs clearfix">
+        <ul class="languageChange clearfix fl">
+            <li>繁体站</li>
+            <li>|</li>
+            <li>英文站</li>
+        </ul>
+        <ul class="btns clearfix fl">
+            <li class="searchBtn rel">
+                <img src="img/search.png" alt="">
+                <input class="searchLine abs">
+                <div class="abs block"></div>
+            </li>
+            <li>
+                <img src="img/personal.png" alt="">
+            </li>
+            <li class="rel">
+                <a href="buyCar.html">
+                    <img src="img/buycar.png" alt="">
+                    <div class="prodsNum abs">2</div>
+                </a>
+
+            </li>
+        </ul>
+    </div>
+    <!--产品中心产品-->
+    <div class="combo-box">
+        <div class="content">
+            <dl class="list list-1">
+                <dt>主题玩具</dt>
+                <dd><a href="" title="清洁系列">奇艺村</a></dd>
+                <dd><a href="" title="比菲德修复系列">治心系列</a></dd>
+                <dd><a href="" title="雪络玛意德美白系列">亲亲</a></dd>
+                <dd><a href="" title="库库马伦抗皱系列">治心系列</a></dd>
+                <dd><a href="" title="啊媞绰克紧致系列">边位家族</a></dd>
+                <dd><a href="" title="帕莎莉草本系列">治心系列</a></dd>
+                <dd><a href="" title="护肤彩妆系列">亲亲</a></dd>
+                <dd><a href="" title="啊莎媞咔镇定系列">边位家族</a></dd>
+            </dl>
+            <dl class="list list-2">
+                <dt>文化书刊</dt>
+                <dd><a href="" title="清洁/卸妆/去角质">奇艺村</a></dd>
+                <dd><a href="" title="眼唇护理">亲亲</a></dd>
+                <dd><a href="" title="安瓶/精华">治心系列</a></dd>
+                <dd><a href="" title="水/乳/霜">边位家族</a></dd>
+                <dd><a href="" title="隔离防护">亲亲</a></dd>
+                <dd><a href="" title="面膜">边位家族</a></dd>
+            </dl>
+            <dl class="list list-3">
+                <dt>品牌服装</dt>
+                <dd><a href="" title="敏感肌|舒缓受损">治心系列</a></dd>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+            <dl class="list list-4">
+                <dt>农产品</dt>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+            <dl class="list list-5">
+                <dt>法律援助</dt>
+                <dd><a href="" title="痘痘肌|修复镇定">边位家族</a></dd>
+                <dd><a href="" title="提拉紧致，保湿抗皱">治心系列</a></dd>
+                <dd><a href="" title="强化肌底，美白淡斑">奇艺村</a></dd>
+                <dd><a href="" title="修复肌底，滋润保湿">亲亲</a></dd>
+            </dl>
+        </div>
+    </div>
+    <!--登录展示-->
+    <ul class="loginModule abs">
+        <li><a href="login.html">账户登录</a></li>
+        <li><a href="">注册账户</a></li>
+    </ul>
+</div>
+<!--购物车信息-->
+<div id="buyCar">
+    <div class="buyCarHead rel">
+        <div class="step1 abs">我的购物车</div>
+        <div class="step2 abs">确认订单信息</div>
+        <div class="step3 abs">提交订单</div>
+    </div>
+    <div class="buyCarMsg">
+        <table cellpadding="0" class="buyCarContent">
+            <thead>
+            <tr>
+                <th width="480">商品名称</th>
+                <th width="150">单价</th>
+                <th width="180">数量</th>
+                <th width="225">小计</th>
+                <th width="225">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="line">
+                <td>
+                    <span class="check"></span><em class="inlineDis"><img src="img/detailProds/prince.png" alt=""></em><div class="inlineDis" style="vertical-align: middle"><p>小王子/儿童文学经典系列</p><p>版本:精装版</p></div>
+                </td>
+                <td class="singlePrice">
+                    199.00
+                </td>
+                <td>
+                    <span class="changeNum"><a href="javascript:;" class="dec">-</a><input type="text" value="1" min="1" class="prodNumber"><a href="javascript:;" class="add">+</a></span>
+                </td>
+                <td class="linePrice">
+                    199.00
+                </td>
+                <td>
+                    <i class="close"></i>
+                </td>
+            </tr>
+            <tr class="line">
+                <td>
+                    <span class="check"></span><em class="inlineDis"><img src="img/detailProds/prince.png" alt=""></em><div class="inlineDis" style="vertical-align: middle"><p>小王子/儿童文学经典系列</p><p>版本:精装版</p></div>
+                </td>
+                <td class="singlePrice">
+                    199.00
+                </td>
+                <td>
+                    <span class="changeNum"><a href="javascript:;" class="dec">-</a><input type="text" value="1" min="1" class="prodNumber"><a href="javascript:;" class="add">+</a></span>
+                </td>
+                <td class="linePrice">
+                    199.00
+                </td>
+                <td>
+                    <i class="close"></i>
+                </td>
+            </tr>
+            <tr class="line">
+                <td>
+                    <span class="check"></span><em class="inlineDis"><img src="img/detailProds/prince.png" alt=""></em><div class="inlineDis" style="vertical-align: middle"><p>小王子/儿童文学经典系列</p><p>版本:精装版</p></div>
+                </td>
+                <td class="singlePrice">
+                    199.00
+                </td>
+                <td>
+                    <span class="changeNum"><a href="javascript:;" class="dec">-</a><input type="text" value="1" min="1" class="prodNumber"><a href="javascript:;" class="add">+</a></span>
+                </td>
+                <td class="linePrice">
+                    199.00
+                </td>
+                <td>
+                    <i class="close"></i>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="bottomLine clearfix">
+            <ul class="fl leftCon clearfix">
+                <li><a class="inlineDis check" href="javascript:;"></a></li>
+                <li>全选</li>
+                <li><a href="javascript:;" class="delAll">删除选中商品</a></li>
+                <li>共<em class="totalNum">   </em>件 已选择<span class="checkNum"> 1 </span>件</li>
+            </ul>
+            <div class="fr rightCon">
+                合计：<span>199.99</span><em class="toConfirm">去结算</em>
+            </div>
+        </div>
+    </div>
+    <div class="buyCarEmpty">您的购物车空空如也,快去商城选些商品吧！</div>
+
+</div>
+<!--底部-->
+<div id="footer"class="rel">
+    <ul class="footerMsg clearfix">
+        <li class="rel">
+            <a href="">新手上路</a>
+            <ul class="abs">
+                <li><a href="">顾客必读</a></li>
+                <li><a href="">订单的几种状态</a></li>
+            </ul>
+        </li>
+        <li class="rel">
+            <a href="">购物指南</a>
+            <ul class="abs">
+                <li><a href="">非会员购物通道</a></li>
+                <li><a href="">网站使用条款</a></li>
+                <li><a href="">网站免责声明</a></li>
+                <li><a href="">购物流程</a></li>
+            </ul>
+        </li>
+        <li class="rel">
+            <a href="">支付与配送</a>
+            <ul class="abs">
+                <li><a href="">支付方式</a></li>
+                <li><a href="">订单何时出库?</a></li>
+                <li><a href="">关于送货验货</a></li>
+            </ul>
+        </li>
+        <li class="rel">
+            <a href="">购物条款</a>
+            <ul class="abs">
+                <li><a href="">会员注册协议</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="serviceCall abs">
+        <li>服务热线</li>
+        <li>86-755-26885651</li>
+        <li>周一至周五 8:00-18:00</li>
+        <li>邮箱地址：xkygame.163.com</li>
+    </ul>
+    <div class="aboutWebsite abs">
+        ©2017 xky Telecom Equipment Co., Ltd. All rights reserved. 备案号:451345454545
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+    $(function () {
+        //购物车总数
+        function buyCarTotal(){
+            var buyCarNum=0;
+            buyCarNum=$('.buyCarContent .line').length;
+            $('.bottomLine .totalNum').text(buyCarNum);
+            //购物车为空
+            if(buyCarNum<=0){
+                $('.buyCarMsg').hide();
+                $('.buyCarEmpty').show()
+            }else{
+
+            }
+        };
+        //计算
+        function calculate(self){
+            //选中的总价
+            var nowTotalPrice=0;
+            //选中商品的数量
+            var prodNum=self.find('.prodNumber').val();
+            //选中商品的单价
+            var prodPrice=self.find('.singlePrice').text();
+            //选中商品一行的小计
+            var linePrice=parseInt(prodNum)*parseFloat(prodPrice);
+            self.find('.linePrice').text(linePrice);
+            //总价变化
+            $('.buyCarContent .line').find('.active').each(function(){
+                //共几项选中
+                var totalNum=$('.buyCarContent .line').find('.active').length;
+                $('#buyCar .bottomLine .checkNum').text(parseInt(totalNum));
+                //总价变化
+                nowTotalPrice+=parseFloat($(this).parent().parent().find('.linePrice').text());
+            });
+            $('.bottomLine .rightCon span').text(nowTotalPrice);
+        };
+        //勾选商品以及价格变化
+        $(function(){
+            /*勾选商品*/
+            var totalCheck=$('#buyCar .bottomLine .check');
+            var carLength= $('.buyCarContent .line').length;
+            var checkedNum=0;
+            $('.buyCarContent .line').each(function(){
+                var _self=$(this);
+                _self.find('.check').click(function(){
+                    if($(this).hasClass('active')){
+                        $(this).removeClass('active');
+                        //只要移出选中就会移出全选
+                        totalCheck.removeClass('active');
+                        //价格变化
+                        calculate(_self);
+                    }else{
+                        $(this).addClass('active');
+                        //当单选全部选完时，把全选至为选中
+                        checkedNum=$('.buyCarContent .line').find('.active').length;
+                        if(checkedNum==carLength){
+                            totalCheck.addClass('active')
+                        }else{
+                        }
+                        //价格变化
+                        calculate(_self);
+                    };
+                });
+            });
+            totalCheck.click(function(){
+                if($(this).hasClass('active')){
+                    $(this).removeClass('active');
+                    //取消购物车全部选中
+                    $('.buyCarContent .line').each(function(){
+                        var _self=$(this);
+                        _self.find('.check').removeClass('active');
+                        calculate(_self);
+                    });
+                }else{
+                    $(this).addClass('active');
+                    //购物车全部选中
+                    $('.buyCarContent .line').each(function(){
+                        var _self=$(this);
+                        _self.find('.check').addClass('active');
+                        calculate(_self);
+                    });
+                }
+            });
+        }())
+        //数量增加以及价格变化
+        $(function(){
+            $('.buyCarContent .line').each(function(){
+                var _self=$(this);
+                _self.find('.dec').click(function(){
+                    if(parseInt(_self.find('.prodNumber').val())<2){
+                        alert('商品数量不能再小啦');
+                    }else{
+                        _self.find('.prodNumber').val(parseInt(_self.find('.prodNumber').val())-1);
+                        calculate(_self);
+                    }
+                })
+                _self.find('.add').click(function(){
+                    console.log('++++')
+                    _self.find('.prodNumber').val(parseInt(_self.find('.prodNumber').val())+1);
+                    calculate(_self);
+                })
+                $('#buyCar .prodNumber').on('input porpertychange',function(){
+                    if($(this).val()<1){
+                        $('.linePrice').text(0);
+                        alert('请输入大于等于1的数字');
+                    }else{
+                        calculate(_self);
+                    }
+
+                });
+
+            })
+
+
+
+        }())
+        //删除商品
+        $(function(){
+            //单删除
+            $('.buyCarContent .line').each(function(){
+                var _self=$(this);
+                _self.find('.close').click(function(){
+                    if(confirm('是否确认删除此商品')){
+                        _self.remove();
+                        buyCarTotal();
+                    }else{
+
+                    }
+
+                })
+            })
+            //删除全部选中
+            $('.bottomLine .delAll').click(function(){
+                var checkNum=$('.buyCarContent .line').find('.active');
+                if(checkNum.length>0){
+                    checkNum.each(function(){
+                        console.log($(this));
+                        $(this).parent().parent().remove();
+                        buyCarTotal();
+                    })
+                }else{
+                    alert('您还没有选中商品哦')
+                }
+
+            })
+
+
+        }())
+        //去结算
+        $(function(){
+            $('#buyCar .toConfirm').click(function(){
+                var checkNum=$('.buyCarContent .line').find('.active');
+                if(checkNum.length<1){
+                    alert('您还没有选中商品哦')
+                }else{
+                    window.location.href="confirmOrder.html"
+                }
+            })
+        }());
+
+    })
+
+
+
+</script>
+</body>
+</html>
